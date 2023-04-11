@@ -4,12 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 40px 316px;
+  padding: 30px 216px;
   gap: 8px;
 
   justify-content: space-around;
 
-  position: absolute;
+  position: relative;
   width: 1916px;
   left: calc(50% - 1916px/2);
   top: 0%;
@@ -28,7 +28,7 @@ export const InputHeader = styled.input`
     width: 401px;
     height: 42px;
 
-    color: #fff;
+    color: #000;
 
     /* Fill Color/BG */
     background: #FFFFFF;
@@ -44,16 +44,8 @@ export const InputHeader = styled.input`
     flex-grow: 0;
 
     padding-left: 25px;
-    background: url("../../images/Search.png") no-repeat left;
+    background: url("../../images/Search.png") no-repeat left #fff;
     background-size: 20px;
     background-position: 95% 10px;
 `;
 
-
-
-/**
- *  padding-left: 25px;
-  background: url("../img/icon-entrar.png") no-repeat left;
-  background-size: 20px;
-  background-position: 12px 10px;
- */
