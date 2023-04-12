@@ -13,5 +13,21 @@ export const ContainerFilter = styled.div`
 
 export const ContainerProducts = styled.div`
   flex: 4;
+
+  flex-direction: column;
+
+  padding: 20px;
 `;
+
+export const ContainerOrderFiltro = styled.div`
+   flex-direction: row;
+
+   width: '100%';
+   display: flex;
+
+   justify-content: flex-end;
+   align-items: flex-end;
+`;
+
+
 
