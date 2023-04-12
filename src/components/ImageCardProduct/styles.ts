@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const ImageProduct = styled.image`
+export const ImageProduct = styled.div`
     position: relative;
     width: 254px;
     height: 254px;
