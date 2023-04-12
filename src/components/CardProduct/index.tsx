@@ -1,16 +1,21 @@
 import { ImageCardProduct } from "../ImageCardProduct"
 import { Card, CategoriesCardProduct, TextCardPriceProduct, TextNameProduct } from "./styles"
 
+type Product = {
+    categories: string;
+    name: string;
+    preco: string;
+    url: string;
+}
 
 
-
-export const CardProduct = () => {
+export const CardProduct = ({ categories, name, preco, url }: Product) => {
     return  (
         <Card>
-            <ImageCardProduct />
-            <CategoriesCardProduct>Corrida</CategoriesCardProduct>
-            <TextNameProduct >Travis Scott x Air Max 270 React ENG 'Cactus Trails'</TextNameProduct>
-            <TextCardPriceProduct>R$ 854,08</TextCardPriceProduct>
+            <ImageCardProduct url={url} />
+            <CategoriesCardProduct>{categories}</CategoriesCardProduct>
+            <TextNameProduct >{name}</TextNameProduct>
+            <TextCardPriceProduct>R$ {preco}</TextCardPriceProduct>
         </Card>
     )
 }
