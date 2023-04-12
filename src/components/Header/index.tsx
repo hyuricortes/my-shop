@@ -23,7 +23,7 @@ const Header: React.FC<Props> = () => {
               />
        </BoxHedader>
        <BoxHedader>
-         <InputHeader type="text" value="" placeholder="Buscar" name="buscar"/>
+         <InputHeader onChange={() => {}} type="text" value="" placeholder="Buscar" name="buscar"/>
        </BoxHedader>
     </Container>
   );

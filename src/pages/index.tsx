@@ -1,5 +1,6 @@
+import { Filtro } from "@/components/Filtro";
 import { useState } from "react";
-import { BoxCleanFilter, ButtonCollapse, ButtonFilter, ContainerFilter, ContainerIndex, ContainerProducts, Divisor, TextCatgories } from "./styles";
+import { ContainerFilter, ContainerIndex, ContainerProducts } from "./styles";
 
 
 export default function Home() {
@@ -10,29 +11,7 @@ export default function Home() {
   return (
     <ContainerIndex>
       <ContainerFilter>
-         <ButtonCollapse  onClick={() => setTagCollapse('categorias')}>Categorias</ButtonCollapse>
-
-         {
-          tagCollapse !== '' && tagCollapse == 'categorias' &&
-              <p>categorias</p>
-         }
-          
-         
-         
-         <Divisor />
-
-         <ButtonCollapse onClick={() => setTagCollapse('precos')}>Preço</ButtonCollapse>
-
-          {
-          tagCollapse !== '' && tagCollapse == 'precos' &&
-              <p>precos</p>
-         }
-
-         <Divisor />
-         <BoxCleanFilter>
-           <ButtonFilter onClick={() =>{}}>Limpar Filtrar</ButtonFilter> 
-         </BoxCleanFilter>
-         
+         <Filtro />
       </ContainerFilter>
       <ContainerProducts>
          1222222222222222
