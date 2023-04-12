@@ -1,7 +1,8 @@
+import { CardProduct } from "@/components/CardProduct";
 import { Filtro } from "@/components/Filtro";
 import { SelectOrderFiltro } from "@/components/SelectOrderFiltro";
 import { useState } from "react";
-import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerProducts } from "./styles";
+import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerProducts, ContainerProductsList } from "./styles";
 
 
 export default function Home() {
@@ -17,7 +18,17 @@ export default function Home() {
          <ContainerOrderFiltro>
             <SelectOrderFiltro />
          </ContainerOrderFiltro>
-         <p>2</p>
+         <ContainerProductsList>
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+            <CardProduct />
+         </ContainerProductsList>
          <p>3</p>
       </ContainerProducts>
     </ContainerIndex>
