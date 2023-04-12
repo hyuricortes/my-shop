@@ -30,4 +30,10 @@ export const ContainerOrderFiltro = styled.div`
 `;
 
 
+export const ContainerProductsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+`;
+
 
