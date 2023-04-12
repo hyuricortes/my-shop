@@ -1,8 +1,9 @@
 import { CardProduct } from "@/components/CardProduct";
 import { Filtro } from "@/components/Filtro";
+import { Paginacao } from "@/components/Paginacao";
 import { SelectOrderFiltro } from "@/components/SelectOrderFiltro";
 import { useState } from "react";
-import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerProducts, ContainerProductsList } from "./styles";
+import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerPaginationProducts, ContainerProducts, ContainerProductsList } from "./styles";
 
 
 export default function Home() {
@@ -29,7 +30,9 @@ export default function Home() {
             <CardProduct />
             <CardProduct />
          </ContainerProductsList>
-         <p>3</p>
+         <ContainerPaginationProducts>
+             <Paginacao />
+         </ContainerPaginationProducts>
       </ContainerProducts>
     </ContainerIndex>
   )
