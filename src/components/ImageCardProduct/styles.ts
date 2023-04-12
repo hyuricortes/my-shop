@@ -8,7 +8,7 @@ export const ImageProduct = styled.div`
     left: 0px;
     top: 0px;
 
-    background: url('https://cdn.shopify.com/s/files/1/2303/2711/files/2_e822dae0-14df-4cb8-b145-ea4dc0966b34.jpg?v=1617059123');
+    background: url(${(props) => '../images/products/'+props.defaultValue});
     background-size: cover;
     border-radius: 8px
 `;

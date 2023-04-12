@@ -3,9 +3,16 @@ import { CheckBoxInput } from "../CheckboxInput";
 import { FiltroInput } from "../FiltroInput";
 import { BoxCleanFilter, BoxFilter, ButtonCollapse, ButtonFilter, Divisor } from "./styles"
 
+type Category = {
+  id: string 
+  name: string 
+}
 
+type Filtros = {
+  categories: any
+}
 
-export const Filtro = () => {
+export const Filtro = ({categories} : Filtros) => {
     const [tagPreco, setTagPreco] = useState<boolean>(false);
     const [tagCategorias, setTagCategorias] = useState<boolean>(false);
     
@@ -15,8 +22,12 @@ export const Filtro = () => {
          {
           tagCategorias &&
            <BoxFilter>
-              <CheckBoxInput name='1'  label="categoria 1" /> 
-              <CheckBoxInput name='2' label="categoria 2" /> 
+            {
+              categories.length &&
+              categories.map((item: Category) => {
+                return <CheckBoxInput key={String(item.id)} name={item.id}  label={item.name} /> 
+              })
+            }
            </BoxFilter>
          }
          <Divisor />
