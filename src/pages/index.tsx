@@ -1,12 +1,12 @@
 import { Filtro } from "@/components/Filtro";
+import { SelectOrderFiltro } from "@/components/SelectOrderFiltro";
 import { useState } from "react";
-import { ContainerFilter, ContainerIndex, ContainerProducts } from "./styles";
+import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerProducts } from "./styles";
 
 
 export default function Home() {
 
   const [tagCollapse, setTagCollapse] = useState<string>("")
-
 
   return (
     <ContainerIndex>
@@ -14,13 +14,11 @@ export default function Home() {
          <Filtro />
       </ContainerFilter>
       <ContainerProducts>
-         1222222222222222
-         222222222222
-         2222222222
-         22222222222222
-         222222222222222
-         222222222222222
-         22222222222222
+         <ContainerOrderFiltro>
+            <SelectOrderFiltro />
+         </ContainerOrderFiltro>
+         <p>2</p>
+         <p>3</p>
       </ContainerProducts>
     </ContainerIndex>
   )
