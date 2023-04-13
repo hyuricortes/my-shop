@@ -24,7 +24,7 @@ Segue projeto teste realizado para correção, atenção em detalhes de imagens 
 
 ### Como rodar
 
-!as
+![YOUR github stats]
 
 ![YOUR github stats](https://github-readme-stats.vercel.app/api?username=USERNAME)
 
