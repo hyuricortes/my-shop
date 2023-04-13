@@ -15,6 +15,8 @@ type Filtros = {
 export const Filtro = ({categories} : Filtros) => {
     const [tagPreco, setTagPreco] = useState<boolean>(false);
     const [tagCategorias, setTagCategorias] = useState<boolean>(false);
+
+    console.log('cat', categories) 
     
     return (
         <>
@@ -23,8 +25,8 @@ export const Filtro = ({categories} : Filtros) => {
           tagCategorias &&
            <BoxFilter>
             {
-              categories.length &&
-              categories.map((item: Category) => {
+              categories.data.length &&
+              categories.data.map((item: Category) => {
                 return <CheckBoxInput key={String(item.id)} name={item.id}  label={item.name} /> 
               })
             }

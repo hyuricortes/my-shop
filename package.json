@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.1.1",
     "prisma": "^4.12.0"
   }
 }
