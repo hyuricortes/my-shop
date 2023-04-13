@@ -10,13 +10,19 @@ type Category = {
 
 type Filtros = {
   categories: any
+  precoMin: string;
+  precoMax: string;
+  setPrecoMin: any;
+  setPrecoMax: any;
+  handleLimparFiltro: any;
+  setCategoria: any;
+  categoria: [];
 }
 
-export const Filtro = ({categories} : Filtros) => {
+export const Filtro = ({setCategoria, categoria, categories, precoMin, precoMax, setPrecoMin, setPrecoMax, handleLimparFiltro} : Filtros) => {
     const [tagPreco, setTagPreco] = useState<boolean>(false);
     const [tagCategorias, setTagCategorias] = useState<boolean>(false);
 
-    console.log('cat', categories) 
     
     return (
         <>
@@ -27,7 +33,7 @@ export const Filtro = ({categories} : Filtros) => {
             {
               categories.data.length &&
               categories.data.map((item: Category) => {
-                return <CheckBoxInput key={String(item.id)} name={item.id}  label={item.name} /> 
+                return <CheckBoxInput value={item.id} setCategoria={setCategoria} categoria={categoria} key={String(item.id)} name={item.id}  label={item.name} /> 
               })
             }
            </BoxFilter>
@@ -37,12 +43,17 @@ export const Filtro = ({categories} : Filtros) => {
           {
            tagPreco &&
               <BoxFilter>
-                <FiltroInput />
+                <FiltroInput 
+                  setPrecoMin={setPrecoMin}  
+                  setPrecoMax={setPrecoMax}
+                  precoMin={String(precoMin)}
+                  precoMax={String(precoMax)}
+                />
               </BoxFilter>
           }
          <Divisor />
          <BoxCleanFilter>
-           <ButtonFilter onClick={() =>{}}>Limpar Filtrar</ButtonFilter> 
+           <ButtonFilter onClick={() => handleLimparFiltro()}>Limpar Filtrar</ButtonFilter> 
          </BoxCleanFilter>
         </>
     )

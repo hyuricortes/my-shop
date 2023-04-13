@@ -6,6 +6,26 @@ export const ContainerPaginacao = styled.div`
    flex-direction: row;
 
    text-align: center;
+
+   width: 1000px;
+
+   @media only screen and (max-width: 1500px) {
+    /* For everything bigger than 768px */
+      width: 900px;
+
+    }
+
+     @media only screen and (max-width: 1100px) {
+    /* For everything bigger than 768px */
+      width: 500px;
+
+    }
+
+     @media only screen and (max-width: 800px) {
+    /* For everything bigger than 768px */
+      width: 300px;
+
+    }
 `;
 
 export const ButtonArrow = styled.a`
@@ -42,10 +62,53 @@ export const ButtonNumber = styled.a`
 
     border: 0.5px solid #ccc;
    // border-radius: 8px 0px 0px 8px;
+    
+    border-radius: 0px;
+    background: #fff;
+    color: #828D9E;
+  
+`;
 
-    {${(props) => props.datatype === 'first' ? 'border-radius: 8px 0px 0px 8px' : props.datatype == 'lasted' ? 'border-radius: 0px 8px 8px 0px' : 'border-radius: 0px'}};
+export const ButtonNumberLeft = styled.a`
+    width: 51px;
+    height: 52px;
+    left: 0px;
+    top: 0px;
 
-    {${(props) => props.hidden === true ? 'background: #6237BF;' : 'background: #fff;'}}
+    cursor: pointer;
 
-     {${(props) => props.hidden === true ? 'color: #FFF;' : 'color: #828D9E;'}}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border: 0.5px solid #ccc;
+   // border-radius: 8px 0px 0px 8px;
+    
+    border-radius: 8px 0px 0px 8px;
+    background: #fff;
+    color: #828D9E;
+  
+`;
+
+export const ButtonNumberRigth = styled.a`
+    width: 51px;
+    height: 52px;
+    left: 0px;
+    top: 0px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border: 0.5px solid #ccc;
+   // border-radius: 8px 0px 0px 8px;
+    
+    border-radius: 0px 8px 8px 0px;
+    background: #fff;
+    color: #828D9E;
+  
 `;

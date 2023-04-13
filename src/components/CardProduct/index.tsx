@@ -6,12 +6,14 @@ type Product = {
     name: string;
     preco: string;
     url: string;
+    handleClick: any;
+    uuid: string;
 }
 
 
-export const CardProduct = ({ categories, name, preco, url }: Product) => {
+export const CardProduct = ({ categories, name, preco, url, handleClick, uuid }: Product) => {
     return  (
-        <Card>
+        <Card onClick={() => handleClick(uuid)}>
             <ImageCardProduct url={url} />
             <CategoriesCardProduct>{categories}</CategoriesCardProduct>
             <TextNameProduct >{name}</TextNameProduct>

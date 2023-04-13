@@ -8,6 +8,18 @@ export const ContainerProduct = styled.div`
   justify-content: space-evenly;
 
   padding: 20px;
+
+  @media only screen and (max-width: 972px) {
+    /* For everything bigger than 768px */
+     flex-direction: column;
+
+    }
+
+    @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 478px;
+  
+    }
 `;
 
 export const ContainerImagemProduct = styled.div`
@@ -19,15 +31,55 @@ export const ContainerImagemProduct = styled.div`
   width: 720px;
   height: 688px;
  
-  background: url('../../images/produto-grande.jpg');
+  background: url(${(props) => props.defaultValue}); 
+  background-repeat: no-repeat;
+   
   border-radius: 8px;
+  background-size: cover;
+
+   @media only screen and (max-width: 1300px) {
+    /* For everything bigger than 768px */
+      width: 578px;
+      height: 550px;
+      background-size: contain;
+
+    }
+
+       @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 478px;
+      height: 450px;
+      background-size: contain;
+
+    }
+
+    @media only screen and (max-width: 452px) {
+    /* For everything bigger than 768px */
+      width: 328px;
+  
+    }
+
+    
 `;
 
 export const ContainerDescriptionProduct = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding-top: 40px;
+  padding-top: 50px;
+ 
+    @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+     padding-top: 70px;
+
+    }
+
+    @media only screen and (max-width: 452px) {
+    /* For everything bigger than 768px */
+       padding-top: 70px;
+  
+    }
+
 `;
 
 export const TextProduct = styled.p`
@@ -51,13 +103,19 @@ export const TextProduct = styled.p`
     flex: none;
     order: 0;
     flex-grow: 0;
+
+     @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 378px;
+  
+    }
 `;
 
 export const DescriptionProduct = styled.div`
     width: 519px;
     height: auto;
 
-    padding-top: 20px;
+    padding-top: 50px;
 
     /* Heading 5 / Regular */
     font-family: 'Inter';
@@ -70,6 +128,23 @@ export const DescriptionProduct = styled.div`
 
     /* Text Color/Low Contrast */
     color: #828D9E;
+     @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 378px;
+  
+    }
+
+      @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+     padding-top: 75px;
+
+    }
+
+    @media only screen and (max-width: 452px) {
+    /* For everything bigger than 768px */
+       padding-top: 75px;
+  
+    }
 
 `;
 
@@ -119,7 +194,7 @@ export const NumberSizeProduct = styled.p`
   background: #FFFFFF;
 
   /* Border Color/#1 */
-  {${(props) => props.hidden === true ? 'border: 2px solid #6237BE;' : 'border: 1px solid #E2E5EA;'}} 
+  border: 2px solid  #E2E5EA;
   border-radius: 8px;
 
   /* Inside auto layout */
@@ -155,7 +230,7 @@ export const SubTextPriceProduct = styled.p`
 
 export const TextPriceProduct = styled.p`
     position: relative;
-    width: 134px;
+    width: 164px;
     height: auto;
 
     /* Heading 2 / SemiBold */
@@ -176,6 +251,12 @@ export const ButtonsProduct = styled.div`
    flex-direction: row;
 
    padding-top: 20px;
+
+   @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 378px;
+  
+    }
 `;
 
 
@@ -271,9 +352,9 @@ export const ImagePequenoProduto = styled.div`
   top: 40px;
 
   background: url('../../images/produto-grande-02.jpg');
-  {${(props) => props.datatype === 'ativo' ? 'border: 2px solid #6237BE' : 'border: 1px solid #ccc'}} 
-
+ 
   margin-top:10px;
 
   border-radius: 8px;
 `;
+

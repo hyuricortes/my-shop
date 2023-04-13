@@ -1,8 +1,13 @@
 import { TextInput } from "./styles"
 
+type InputTextDTO = {
+    text: string;
+    handleText: any;
+    placeholder: string;
+}
 
-export const InputText = () => {
+export const InputText = ({ text, handleText, placeholder }: InputTextDTO) => {
     return (
-        <TextInput placeholder="$500" />
+        <TextInput placeholder={placeholder} value={text} onChange={(e) => handleText(String(e.target.value))} />
     )
 }
