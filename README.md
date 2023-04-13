@@ -5,6 +5,9 @@
 
 ### Olá 👋
 Segue projeto teste realizado para correção, atenção em detalhes de imagens pode vim repetidas pois no figma somente tinha um exemplo.
+
+### Tecnologias usadas
+
 - 🔭 I’m currently working on image classification (also, I am brushing up my data structures and algorithms skills regularly).
 - 🌱 I’m currently learning Computer Vision and Deep Learning techniques using PyTorch.
 - 🤝 I’m looking to collaborate on data science and deep learning projects. 
