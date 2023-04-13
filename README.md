@@ -1,7 +1,7 @@
 # my-shop
 
 
-<img src="https://github.com/pr2tik1/pr2tik1/blob/master/IMAGE-NAME">
+<img src="https://files.fm/u/ggj5ynja3">
 
 ### Olá 👋
 Segue projeto teste realizado para correção, atenção em detalhes de imagens pode vim repetidas pois no figma somente tinha um exemplo.
