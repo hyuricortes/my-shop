@@ -54,7 +54,7 @@ export default function Home() {
 
    const listCategories = async () => {
       try {
-       const { data } = await api.get('/categories/all');  
+       const { data } = await api.get('/categories/all'); 
        setCategories(data) 
       } catch (error) {
        console.log(error)  
@@ -84,9 +84,6 @@ export default function Home() {
                })
             }
          </ContainerProductsList>
-         <ContainerPaginationProducts>
-             <Paginacao />
-         </ContainerPaginationProducts>
       </ContainerProducts>
     </ContainerIndex>
   )

@@ -27,6 +27,9 @@ export const ContainerOrderFiltro = styled.div`
 
    justify-content: flex-end;
    align-items: flex-end;
+
+   max-width: 930px;
+   margin-bottom: 20px;
 `;
 
 
@@ -34,6 +37,8 @@ export const ContainerProductsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+
+  max-width: 1000px;
 `;
 
 

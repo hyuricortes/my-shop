@@ -27,7 +27,7 @@ export const Text = styled.label`
 
    justify-content: center;
 
-   padding-bottom: 5px;
+   padding-bottom: 15px;
 `;
 
 export const SpanCheckbox = styled.span`
