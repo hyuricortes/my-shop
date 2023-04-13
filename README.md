@@ -24,7 +24,23 @@ Segue projeto teste realizado para correção, atenção em detalhes de imagens 
 
 ### Como rodar
 
-`asasas`
+1) Clone o projeto.
+
+2) Com projeto baixado favor executar na raiz do projeto:
+
+`npm install ou yarn install`
+
+3) Rode esse comando para migração do banco de dados
+
+`npx prisma migrate dev`
+
+4) Agora caso queira ver o banco de dados
+ 
+`npx prisma studio`
+
+
+
+
 
 ![YOUR github stats](https://github-readme-stats.vercel.app/api?username=USERNAME)
 
