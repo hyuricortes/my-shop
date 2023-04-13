@@ -36,6 +36,7 @@ export const ButtonFilter = styled.button`
     padding: 15px 30px;
     gap: 10px;
 
+    cursor: pointer;
 
     width: 164px;
     height: 52px;

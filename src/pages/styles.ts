@@ -5,6 +5,12 @@ export const ContainerIndex = styled.div`
     display: flex;
     flex-direction: row;
     padding: 20px;
+
+    @media only screen and (max-width: 1200px) {
+    /* For everything bigger than 768px */
+     flex-direction: column;
+
+    }
 `;
 
 export const ContainerFilter = styled.div`
@@ -37,6 +43,8 @@ export const ContainerProductsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+
+  cursor: pointer;
 
   max-width: 1000px;
 `;

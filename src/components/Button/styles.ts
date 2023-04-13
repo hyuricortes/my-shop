@@ -22,4 +22,10 @@ export const Buttons = styled.button`
     flex: none;
     order: 1;
     flex-grow: 1;
+
+    @media only screen and (max-width: 552px) {
+    /* For everything bigger than 768px */
+      width: 278px;
+  
+    }
 `;

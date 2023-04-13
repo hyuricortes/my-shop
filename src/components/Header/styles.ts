@@ -15,7 +15,25 @@ export const Container = styled.div`
   top: 0%;
   bottom: 92.7%;
 
-  background: linear-gradient(270deg, #1F123C 65.71%, #6237BF 100%); 
+  background: linear-gradient(270deg, #1F123C 65.71%, #6237BF 100%);
+  
+  @media only screen and (max-width: 1500px) {
+  /* For everything bigger than 768px */
+  left: calc(50% - 1416px/2);
+  padding: 30px 800px 30px 200px;
+  background: linear-gradient(270deg, #1F123C 65.71%, #6237BF 100%);
+
+  }
+
+  @media only screen and (max-width: 1000px) {
+  /* For everything bigger than 768px */
+  left: calc(50% - 1416px/2);
+  padding: 30px 800px 30px 300px;
+  flex-direction: column;
+  background: linear-gradient(270deg, #1F123C 65.71%, #6237BF 100%);
+
+  }
+  
 `;
 
 export const BoxHedader = styled.div`
@@ -47,5 +65,11 @@ export const InputHeader = styled.input`
     background: url("../../images/Search.png") no-repeat left #fff;
     background-size: 20px;
     background-position: 95% 10px;
+
+    @media only screen and (max-width: 1000px) {
+    /* For everything bigger than 768px */
+    width: 301px;
+
+    }
 `;
 

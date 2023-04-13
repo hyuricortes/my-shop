@@ -2,26 +2,24 @@ import { useState } from "react";
 import { OrderFiltro } from "./styles";
 
 
+type OrderFiltro = {
+  order: string;
+  setOrder: any;
+}
 
-export const SelectOrderFiltro = () => {
+export const SelectOrderFiltro = ({ order, setOrder }: OrderFiltro) => {
 
-    const [value, setValue] = useState("b");
-
-    function logValue() {
-        console.log(value);
-    }
+    
 
     return (
         <OrderFiltro
-              value={value}
+              value={order}
               onChange={(e) => {
-                setValue(e.target.value);
+                setOrder(e.target.value);
               }}
             >
-              <option value="a">A-Z</option>
-              <option value="b">Z-A</option>
-              <option value="c">Menor Preço</option>
-              <option value="d">Maior Preço</option>
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
       </OrderFiltro> 
     )
 }

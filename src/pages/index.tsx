@@ -2,9 +2,12 @@ import { CardProduct } from "@/components/CardProduct";
 import { Filtro } from "@/components/Filtro";
 import { Paginacao } from "@/components/Paginacao";
 import { SelectOrderFiltro } from "@/components/SelectOrderFiltro";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { api } from "./lib/axios";
 import { ContainerFilter, ContainerIndex, ContainerOrderFiltro, ContainerPaginationProducts, ContainerProducts, ContainerProductsList } from "./styles";
+
+import { useRouter } from 'next/navigation';
+import { SearchContext } from "@/contexts/SeachContext";
 
 type Produt = {
   id: string
@@ -33,19 +36,40 @@ type Categories = {
 
 
 export default function Home() {
-
+   const { push } = useRouter();
    const [products , setProducts] = useState<Produts>()
    const [categories , setCategories] = useState<Categories>()
 
-   useEffect(() => {
-      listProducts()
-      listCategories()
-   }, [])
+    const [precoMin, setPrecoMin] = useState<string>("")
+    const [precoMax, setPrecoMax] = useState<string>("")
+    const [categoria, setCategoria] = useState<[]>([])
+    const [filteredCategoryId, setFilteredCategoryId] = useState("0");
+    const [clean, setClean] = useState<boolean>(false);
 
-   const listProducts = async () => {
-      
+    const { stateSearchAll , page } = useContext(SearchContext);
+
+    const [order, setOrder] = useState("asc");
+
+   const handleLimparFiltro = () => {
+      setPrecoMax("");
+      setPrecoMin("");
+      setFilteredCategoryId('0');
+      setClean(!clean)
+   }
+
+   useEffect(() => {
+      listProducts(precoMin, precoMax)
+      listCategories()
+   }, [precoMin, precoMax, categoria, order, stateSearchAll, page])
+
+   const listProducts = async (min: string, max: string) => {
+      if (categoria.length === 0) {
+         setFilteredCategoryId('0');
+      } else {
+         setFilteredCategoryId(categoria.join(","));
+      }
       try {
-       const { data } = await api.get('/products');  
+       const { data } = await api.get(`/products?min=${min}&max=${max}&cat=${filteredCategoryId}&order=${order}&name=${stateSearchAll}&p=${page}`);  
        setProducts(data) 
       } catch (error) {
        console.log(error)  
@@ -61,14 +85,30 @@ export default function Home() {
       }
    }
 
+   const handleProductRedirect = async (uuid: string) => {
+      push(`/product/${uuid}`);
+   }
+
   return (
     <ContainerIndex>
       <ContainerFilter>
-         <Filtro categories={categories} />
+         <Filtro 
+            categories={categories} 
+            precoMin={String(precoMin)} 
+            precoMax={String(precoMax)} 
+            setPrecoMax={setPrecoMax} 
+            setPrecoMin={setPrecoMin} 
+            categoria={categoria}
+            setCategoria={setCategoria}
+            handleLimparFiltro={handleLimparFiltro}
+            />
       </ContainerFilter>
       <ContainerProducts>
          <ContainerOrderFiltro>
-            <SelectOrderFiltro />
+            <SelectOrderFiltro 
+             order={order}
+             setOrder={setOrder}
+            />
          </ContainerOrderFiltro>
          <ContainerProductsList>
             {
@@ -80,10 +120,15 @@ export default function Home() {
                      name={item.name}
                      preco={item.preco}
                      url={item.imagem}
+                     handleClick={handleProductRedirect}
+                     uuid={String(item.id)}
                   />
                })
             }
          </ContainerProductsList>
+         <ContainerPaginationProducts>
+            <Paginacao size={Number(products?.data.length)} />
+         </ContainerPaginationProducts>
       </ContainerProducts>
     </ContainerIndex>
   )

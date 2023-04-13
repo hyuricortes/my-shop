@@ -22,7 +22,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse<S
 
     const sizes = await prisma.sizesImages.findMany({
         where: {
-            id: ''
+            product_id: String(req.query.id)
         }
     })
 
